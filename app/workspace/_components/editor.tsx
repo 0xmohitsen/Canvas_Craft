@@ -72,7 +72,6 @@ function Editor({onSaveTrigger,fileId,fileData}:{onSaveTrigger:any,fileId:any,fi
                     placeholder:'Enter a Header'
                 }
               },
-                list: List,
                 raw: RawTool,
                 paragraph: Paragraph,
                 warning: Warning,

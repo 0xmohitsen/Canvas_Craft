@@ -19,6 +19,8 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { useRouter } from "next/navigation";
+import { useConvex } from "convex/react";
+import { api } from "@/convex/_generated/api";
 
 export interface FileInterface {
   archive: boolean;
@@ -37,11 +39,20 @@ function fileList() {
   const session = useSession();
   const user: any = session?.data?.user;
   const router = useRouter();
+  const convex = useConvex();
+
+  console.log("FlieList is ", fileList)
 
   useEffect(() => {
     fileList_ && setFileList(fileList_);
     console.log(fileList_);
   }, [fileList_]);
+
+  // const onDeleteHandler = async () => {
+  //   const result = await convex.mutation(api.files.deleteById, {_id: fileList._id});
+
+  //   console.log("Got the result after deleting the file: ",result);
+  // }
   return (
     <div className="overflow-x-auto mt-10">
       <table className="min-w-full divide-y-2 divide-gray-200 bg-white text-sm">
@@ -94,19 +105,19 @@ function fileList() {
                       <MoreHorizontal />
                     </DropdownMenuTrigger>
                     <DropdownMenuContent>
-                    <DropdownMenuItem className="gap-3">
+                    <DropdownMenuItem className="gap-3 cursor-pointer">
                         {" "}
                         <Archive className="h-4 w-4" />
                         Archive
                       </DropdownMenuItem>
-                      <DropdownMenuItem className="gap-3">
+                      <DropdownMenuItem className="gap-3 cursor-pointer">
                         {" "}
                         <File className="h-4 w-4" />
                         Rename
                       </DropdownMenuItem>
-                      <DropdownMenuItem className="gap-3">
+                      <DropdownMenuItem className="gap-3 cursor-pointer">
                         {" "}
-                        <DeleteIcon className="h-4 w-4" />
+                        <DeleteIcon className="h-4 w-4"/>
                         Delete
                       </DropdownMenuItem>
                       {/* <DropdownMenuSeparator /> */}
