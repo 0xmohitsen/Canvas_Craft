@@ -38,7 +38,7 @@ function sidebarTopSection({ user, setActiveTeamInfo }: any) {
     {
       id: 2,
       name: "Settings",
-      path: "",
+      path: "/dashboard/settings",
       icon: Settings,
     },
   ];
@@ -144,7 +144,7 @@ function sidebarTopSection({ user, setActiveTeamInfo }: any) {
       </Popover>
 
       {/* All File Button */}
-      <button className="w-full flex gap-2 justify-start bg-gray-50 hover:bg-gray-200 p-2 text-[14px] rounded-lg font-bold mt-8">
+      <button onClick={() => router.push('/dashboard')} className="w-full flex gap-2 justify-start bg-gray-50 hover:bg-gray-200 p-2 text-[14px] rounded-lg font-bold mt-8">
         <LayoutGrid className="h-5 w-5"/>
         All Files
       </button>

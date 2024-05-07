@@ -2,6 +2,7 @@ import { Archive, FilesIcon, Flag, Github } from "lucide-react";
 import React, { useState } from "react";
 import {
   Dialog,
+  DialogClose,
   DialogContent,
   DialogDescription,
   DialogFooter,
@@ -80,7 +81,9 @@ function sidebarBottomSection({ onFileCreate, totalFiles }: any) {
             </DialogDescription>
           </DialogHeader>
           <DialogFooter>
+            <DialogClose asChild>
             <button onClick={() => onFileCreate(fileInput)} type="submit" className="mt-4 bg-blue-600 disabled:bg-blue-500 hover:bg-blue-700 w-full p-2 rounded-md font-bold text-white" disabled={!(fileInput&&fileInput.length>3)}>Create</button>
+            </DialogClose>
           </DialogFooter>
         </DialogContent>
       </Dialog>
