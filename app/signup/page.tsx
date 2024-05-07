@@ -29,6 +29,8 @@ export default function signup() {
 
     if(result.length){
       router.push('/dashboard');
+    } else {
+      router.push('/teams/create');
     }
   }
 

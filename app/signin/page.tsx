@@ -31,6 +31,8 @@ export default function signin() {
 
     if(result.length){
       router.push('/dashboard');
+    } else {
+      router.push('/teams/create');
     }
   }
   const {
