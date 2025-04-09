@@ -5,11 +5,11 @@ import React from "react";
 
 function header() {
   return (
-    <header className="bg-black min-h-[10vh]">
+    <header className="min-h-[10vh] border-b border-white bg-black">
       <div className="mx-auto flex h-16 max-w-screen-xl items-center gap-8 px-4 sm:px-6 lg:px-8">
         <Link href="/" className="block text-teal-600">
-          <span className="font-bold text-2xl text-red-600">Canvas</span>
-          <span className="font-bold text-2xl text-sky-600">Craft</span>
+          <span className="text-2xl font-bold text-red-600">Canvas</span>
+          <span className="text-2xl font-bold text-sky-600">Craft</span>
         </Link>
 
         <div className="flex flex-1 items-center justify-end md:justify-between">
@@ -61,36 +61,11 @@ function header() {
             <div className="sm:flex sm:gap-4">
               <Link
                 href="signin"
-                className="block rounded-md px-5 py-2.5 text-sm font-medium text-white transition hover:bg-white hover:text-black"
+                className="block rounded-md bg-white px-5 py-2.5 text-sm font-medium text-black transition hover:bg-gray-200"
               >
                 Login
               </Link>
-
-              <Link
-                href="signup"
-                className="hidden rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium text-black transition hover:bg-gray-200 sm:block"
-              >
-                Register
-              </Link>
             </div>
-
-            <button className="block rounded bg-gray-100 p-2.5 text-gray-600 transition hover:text-gray-600/75 md:hidden">
-              <span className="sr-only">Toggle menu</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              </svg>
-            </button>
           </div>
         </div>
       </div>
